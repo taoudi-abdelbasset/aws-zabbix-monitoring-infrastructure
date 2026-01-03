@@ -1,0 +1,274 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-XXXXXXXXX",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-XXXXXXXXX",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:XXXXXXXXXXXX:security-group/sg-XXXXXXXXX",
+            "OwnerId": "XXXXXXXXXXXX",
+            "GroupName": "windows-client-sg",
+            "Description": "Security group for Windows monitored client",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "icmp",
+                    "FromPort": -1,
+                    "ToPort": -1,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow ping from VPC",
+                            "CidrIp": "10.0.0.0/16"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 3389,
+                    "ToPort": 3389,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Remote Desktop access",
+                            "CidrIp": "YOUR_PUBLIC_IP/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 10050,
+                    "ToPort": 10050,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Zabbix Agent port",
+                            "UserId": "XXXXXXXXXXXX",
+                            "GroupId": "sg-XXXXXXXXX"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-XXXXXXXXX",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-XXXXXXXXX",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:XXXXXXXXXXXX:security-group/sg-XXXXXXXXX",
+            "OwnerId": "XXXXXXXXXXXX",
+            "GroupName": "linux-client-sg",
+            "Description": "Security group for Linux monitored client",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "YOUR_PUBLIC_IP/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "icmp",
+                    "FromPort": -1,
+                    "ToPort": -1,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow ping from VPC",
+                            "CidrIp": "10.0.0.0/16"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 10050,
+                    "ToPort": 10050,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Zabbix Agent port",
+                            "UserId": "XXXXXXXXXXXX",
+                            "GroupId": "sg-XXXXXXXXX"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-XXXXXXXXX",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-XXXXXXXXX",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:XXXXXXXXXXXX:security-group/sg-XXXXXXXXX",
+            "OwnerId": "XXXXXXXXXXXX",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "XXXXXXXXXXXX",
+                            "GroupId": "sg-XXXXXXXXX"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-XXXXXXXXX",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow all outbound traffic",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "VpcId": "vpc-XXXXXXXXX",
+            "SecurityGroupArn": "arn:aws:ec2:us-east-1:XXXXXXXXXXXX:security-group/sg-XXXXXXXXX",
+            "OwnerId": "XXXXXXXXXXXX",
+            "GroupName": "zabbix-server-sg",
+            "Description": "Security group for Zabbix monitoring server",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "YOUR_PUBLIC_IP/32"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 10051,
+                    "ToPort": 10051,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Zabbix Server receives data from agents",
+                            "CidrIp": "10.0.0.0/16"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "icmp",
+                    "FromPort": -1,
+                    "ToPort": -1,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "Allow ping from VPC",
+                            "CidrIp": "10.0.0.0/16"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        }
+    ]
+}

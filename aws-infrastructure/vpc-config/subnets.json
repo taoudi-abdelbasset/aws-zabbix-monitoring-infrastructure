@@ -1,0 +1,36 @@
+{
+    "Subnets": [
+        {
+            "AvailabilityZoneId": "use1-azX",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "XXXXXXXXXXXX",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "Zabbix-public-subnet"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:us-east-1:XXXXXXXXXXXX:subnet/subnet-XXXXXXXXX",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-XXXXXXXXX",
+            "State": "available",
+            "VpcId": "vpc-XXXXXXXXX",
+            "CidrBlock": "10.0.1.0/24",
+            "AvailableIpAddressCount": 248,
+            "AvailabilityZone": "us-east-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": true
+        }
+    ]
+}

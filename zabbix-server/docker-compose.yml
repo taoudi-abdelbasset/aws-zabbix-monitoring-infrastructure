@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  postgres-server:
+    image: postgres:15-alpine
+    container_name: zabbix-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbix_password
+      POSTGRES_DB: zabbix
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - zabbix-net
+
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql:ubuntu-6.4-latest
+    container_name: zabbix-server
+    restart: always
+    environment:
+      DB_SERVER_HOST: postgres-server
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbix_password
+      POSTGRES_DB: zabbix
+      ZBX_CACHESIZE: 512M
+      ZBX_HISTORYCACHESIZE: 128M
+      ZBX_TRENDCACHESIZE: 128M
+      ZBX_VALUECACHESIZE: 256M
+    ports:
+      - "10051:10051"
+    depends_on:
+      - postgres-server
+    volumes:
+      - zabbix-server-data:/var/lib/zabbix
+    networks:
+      - zabbix-net
+
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-pgsql:ubuntu-6.4-latest
+    container_name: zabbix-web
+    restart: always
+    environment:
+      DB_SERVER_HOST: postgres-server
+      POSTGRES_USER: zabbix
+      POSTGRES_PASSWORD: zabbix_password
+      POSTGRES_DB: zabbix
+      ZBX_SERVER_HOST: zabbix-server
+      PHP_TZ: America/New_York
+    ports:
+      - "80:8080"
+      - "443:8443"
+    depends_on:
+      - postgres-server
+      - zabbix-server
+    networks:
+      - zabbix-net
+
+volumes:
+  postgres-data:
+  zabbix-server-data:
+
+networks:
+  zabbix-net:
+    driver: bridge

@@ -1,0 +1,20 @@
+{
+    "InternetGateways": [
+        {
+            "Attachments": [
+                {
+                    "State": "available",
+                    "VpcId": "vpc-XXXXXXXXX"
+                }
+            ],
+            "InternetGatewayId": "igw-XXXXXXXXX",
+            "OwnerId": "XXXXXXXXXXXX",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "zabbix-igw"
+                }
+            ]
+        }
+    ]
+}

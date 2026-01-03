@@ -1,0 +1,162 @@
+{
+    "Reservations": [
+        {
+            "ReservationId": "r-XXXXXXXXX",
+            "OwnerId": "XXXXXXXXXXXX",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2026-01-03T15:11:42+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-XXXXXXXXX"
+                            }
+                        }
+                    ],
+                    "ClientToken": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "",
+                                "PublicIp": "Y.Y.Y.Y"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2026-01-03T15:11:41+00:00",
+                                "AttachmentId": "eni-attach-XXXXXXXXX",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-XXXXXXXXX",
+                                    "GroupName": "windows-client-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "XX:XX:XX:XX:XX:XX",
+                            "NetworkInterfaceId": "eni-XXXXXXXXXXXXXXXXXX",
+                            "OwnerId": "XXXXXXXXXXXX",
+                            "PrivateIpAddress": "10.0.1.192",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "",
+                                        "PublicIp": "Y.Y.Y.Y"
+                                    },
+                                    "Primary": true,
+                                    "PrivateIpAddress": "10.0.1.192"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-XXXXXXXXX",
+                            "VpcId": "vpc-XXXXXXXXX",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-XXXXXXXXX",
+                            "GroupName": "windows-client-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "windows-client"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi",
+                    "PlatformDetails": "Windows",
+                    "UsageOperation": "RunInstances:0002",
+                    "UsageOperationUpdateTime": "2026-01-03T15:11:41+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-XXXXXXXXX",
+                    "ImageId": "ami-XXXXXXXXXXXXXXXXXX",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-192.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "zabbix-key",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "m7i-XXXXXXXXX.large",
+                    "LaunchTime": "2026-01-03T15:11:41+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-azX",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Platform": "windows",
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-XXXXXXXXX",
+                    "VpcId": "vpc-XXXXXXXXX",
+                    "PrivateIpAddress": "10.0.1.192",
+                    "PublicIpAddress": "Y.Y.Y.Y"
+                }
+            ]
+        }
+    ]
+}

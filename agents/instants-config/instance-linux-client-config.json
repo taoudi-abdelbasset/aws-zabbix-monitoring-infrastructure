@@ -1,0 +1,161 @@
+{
+    "Reservations": [
+        {
+            "ReservationId": "r-XXXXXXXXX",
+            "OwnerId": "XXXXXXXXXXXX",
+            "Groups": [],
+            "Instances": [
+                {
+                    "Architecture": "x86_64",
+                    "BlockDeviceMappings": [
+                        {
+                            "DeviceName": "/dev/sda1",
+                            "Ebs": {
+                                "AttachTime": "2026-01-03T15:09:04+00:00",
+                                "DeleteOnTermination": true,
+                                "Status": "attached",
+                                "VolumeId": "vol-XXXXXXXXX"
+                            }
+                        }
+                    ],
+                    "ClientToken": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+                    "EbsOptimized": true,
+                    "EnaSupport": true,
+                    "Hypervisor": "xen",
+                    "NetworkInterfaces": [
+                        {
+                            "Association": {
+                                "IpOwnerId": "amazon",
+                                "PublicDnsName": "",
+                                "PublicIp": "X.X.X.X"
+                            },
+                            "Attachment": {
+                                "AttachTime": "2026-01-03T15:09:03+00:00",
+                                "AttachmentId": "eni-attach-XXXXXXXXX",
+                                "DeleteOnTermination": true,
+                                "DeviceIndex": 0,
+                                "Status": "attached",
+                                "NetworkCardIndex": 0
+                            },
+                            "Description": "",
+                            "Groups": [
+                                {
+                                    "GroupId": "sg-XXXXXXXXX",
+                                    "GroupName": "linux-client-sg"
+                                }
+                            ],
+                            "Ipv6Addresses": [],
+                            "MacAddress": "XX:XX:XX:XX:XX:XX",
+                            "NetworkInterfaceId": "eni-XXXXXXXXXXXXXXXXXX",
+                            "OwnerId": "XXXXXXXXXXXX",
+                            "PrivateIpAddress": "10.0.1.123",
+                            "PrivateIpAddresses": [
+                                {
+                                    "Association": {
+                                        "IpOwnerId": "amazon",
+                                        "PublicDnsName": "",
+                                        "PublicIp": "X.X.X.X"
+                                    },
+                                    "Primary": true,
+                                    "PrivateIpAddress": "10.0.1.123"
+                                }
+                            ],
+                            "SourceDestCheck": true,
+                            "Status": "in-use",
+                            "SubnetId": "subnet-XXXXXXXXX",
+                            "VpcId": "vpc-XXXXXXXXX",
+                            "InterfaceType": "interface",
+                            "Operator": {
+                                "Managed": false
+                            }
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "RootDeviceType": "ebs",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-XXXXXXXXX",
+                            "GroupName": "linux-client-sg"
+                        }
+                    ],
+                    "SourceDestCheck": true,
+                    "Tags": [
+                        {
+                            "Key": "Name",
+                            "Value": "linux-client"
+                        }
+                    ],
+                    "VirtualizationType": "hvm",
+                    "CpuOptions": {
+                        "CoreCount": 1,
+                        "ThreadsPerCore": 2
+                    },
+                    "CapacityReservationSpecification": {
+                        "CapacityReservationPreference": "open"
+                    },
+                    "HibernationOptions": {
+                        "Configured": false
+                    },
+                    "MetadataOptions": {
+                        "State": "applied",
+                        "HttpTokens": "required",
+                        "HttpPutResponseHopLimit": 2,
+                        "HttpEndpoint": "enabled",
+                        "HttpProtocolIpv6": "disabled",
+                        "InstanceMetadataTags": "disabled"
+                    },
+                    "EnclaveOptions": {
+                        "Enabled": false
+                    },
+                    "BootMode": "uefi-XXXXXXXXX",
+                    "PlatformDetails": "Linux/UNIX",
+                    "UsageOperation": "RunInstances",
+                    "UsageOperationUpdateTime": "2026-01-03T15:09:03+00:00",
+                    "PrivateDnsNameOptions": {
+                        "HostnameType": "ip-name",
+                        "EnableResourceNameDnsARecord": false,
+                        "EnableResourceNameDnsAAAARecord": false
+                    },
+                    "MaintenanceOptions": {
+                        "AutoRecovery": "default",
+                        "RebootMigration": "default"
+                    },
+                    "CurrentInstanceBootMode": "uefi",
+                    "NetworkPerformanceOptions": {
+                        "BandwidthWeighting": "default"
+                    },
+                    "Operator": {
+                        "Managed": false
+                    },
+                    "InstanceId": "i-XXXXXXXXX",
+                    "ImageId": "ami-XXXXXXXXXXXXXXXXXX",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "PrivateDnsName": "ip-10-0-1-123.ec2.internal",
+                    "PublicDnsName": "",
+                    "StateTransitionReason": "",
+                    "KeyName": "zabbix-key",
+                    "AmiLaunchIndex": 0,
+                    "ProductCodes": [],
+                    "InstanceType": "c7i-XXXXXXXXX.large",
+                    "LaunchTime": "2026-01-03T15:18:52+00:00",
+                    "Placement": {
+                        "AvailabilityZoneId": "use1-azX",
+                        "GroupName": "",
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "SubnetId": "subnet-XXXXXXXXX",
+                    "VpcId": "vpc-XXXXXXXXX",
+                    "PrivateIpAddress": "10.0.1.123",
+                    "PublicIpAddress": "X.X.X.X"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "Vpcs": [
+        {
+            "OwnerId": "XXXXXXXXXXXX",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-XXXXXXXXX",
+                    "CidrBlock": "10.0.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "zabbix-vpc"
+                },
+                {
+                    "Key": "project",
+                    "Value": "Zabbix-Monitoring"
+                }
+            ],
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-XXXXXXXXX",
+            "State": "available",
+            "CidrBlock": "10.0.0.0/16",
+            "DhcpOptionsId": "dopt-XXXXXXXXX"
+        }
+    ]
+}

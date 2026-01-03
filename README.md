@@ -42,11 +42,22 @@ Perfect for learning, labs, or as a starting point for production deployments.
 - **Comprehensive Documentation**: Every component fully documented
 - **Export/Import Ready**: All AWS configurations exported as JSON
 
+
 ## Architecture
 
-==Place hodler fro the arch AWS infra==
+This repository includes two architecture designs:
 
-### Components
+### Lab/Learning Architecture (Current Implementation)
+
+![Lab Infrastructure](./resources/architecture/lab-infra.png)
+
+**Key Features:**
+- Single public subnet for simplicity
+- All instances with public IPs for easy access
+- Direct internet access via Internet Gateway
+- Perfect for learning and testing
+
+**Components:**
 
 1. **Zabbix Server** (t3.large, Ubuntu 22.04)
    - Dockerized Zabbix 6.4 with PostgreSQL
@@ -60,6 +71,72 @@ Perfect for learning, labs, or as a starting point for production deployments.
 3. **Windows Client** (t3.large, Windows Server 2022)
    - Zabbix Agent
    - Monitored by Zabbix Server
+
+---
+
+### Production Architecture (Recommended)
+
+![Production Infrastructure](./resources/architecture/prod-infa-simple.png)
+
+**Enhanced Security & Scalability Features:**
+
+#### Network Architecture
+- **Public Subnet**: Contains Load Balancer and NAT Gateway for internet-facing services
+- **Private Subnets**: Hosts all application instances (Zabbix Server, monitored clients) with no direct internet access
+- **NAT Gateway**: Enables private instances to download updates and patches while remaining secure
+
+#### High Availability Components
+- **Application Load Balancer (ALB)**:
+  - Distributes traffic to Zabbix web interface
+  - Provides SSL/TLS termination
+  - Health checks and automatic failover
+  - Can scale across multiple Zabbix servers
+
+- **Amazon RDS PostgreSQL**:
+  - Managed database service in separate private subnet
+  - Automated backups and point-in-time recovery
+  - Multi-AZ deployment for high availability
+  - Automatic failover and maintenance
+
+#### Security Enhancements
+- **AWS Secrets Manager**:
+  - Stores database credentials, SSH keys, and API tokens
+  - Automatic secret rotation
+  - Fine-grained access control via IAM
+  - Audit logging of secret access
+
+- **Amazon S3**:
+  - Stores Zabbix configuration backups
+  - Zabbix exports and report archives
+  - Server-side encryption
+  - Versioning for recovery
+
+- **AWS WAF (Web Application Firewall)**:
+  - Protects Zabbix web interface from common attacks
+  - Rate limiting and IP filtering
+  - SQL injection and XSS protection
+  - Custom security rules
+
+#### Monitoring & Notifications
+- **CloudWatch Integration**:
+  - EC2 instance metrics (CPU, memory, disk)
+  - RDS database performance monitoring
+  - Load Balancer health and traffic metrics
+  - Custom application metrics
+
+- **SNS (Simple Notification Service)**:
+  - Email/SMS alerts for critical events
+  - Instance failure notifications
+  - Automated monthly monitoring reports
+  - Integration with Zabbix alerting
+
+#### Cost Optimization
+- **Auto Scaling Groups** (optional):
+  - Scale Zabbix proxy servers based on load
+  - Automatic replacement of unhealthy instances
+  - Scheduled scaling for peak hours
+
+---
 
 ## Prerequisites
 
